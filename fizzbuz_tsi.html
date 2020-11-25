@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TSI FizzBuzz Challange</title>
+<style>
+body{
+	font-family: Helvetica, Arial, "sans-serif";
+	font-size: 1em;
+	line-height: 1.2;
+	margin:0 auto;
+	padding:4em 1em 2em 1em;
+	width:70%;
+}
+
+.tsi--section{
+	margnin:0;
+	padding:0;
+}
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;line-height:1;}
+h1{fonts-size:3.5em;}
+
+h1+p{font-size:1.5en;}
+.tsi--section 
+</style>
+</head>
+
+<body>
+<section class="tsi--section">
+<div class="tsi--block tsi--title">
+	<h1>TSI FizzBuzz Challange</h1>
+	<p>David Camacho Solution Submission</p>
+</div>
+<div class="tsi--block tsi--solution" id="solution"></div>
+</section>
+<script>
+/**
+*  outputs count from 1 to given number into "solution" elemet. identifies multiples of 3, 5, *  and 15 with text vs number, "Fizz", "Buzz", or 'FizzBuzz" respectivelt., 
+*/
+let get_fizBiz = (n) =>{
+	// storage for text output
+	let myOutput="";
+	// loop interations based on n 
+	for(let i = 1; i<n+1; i++){
+		if(i % (3*5) === 0){// if i is divisible by 15 (no remainder) print "FizzBuzz" 
+			myOutput += "FizzBuzz";
+			console.log("FizzBuzz");
+		}else if(i % 5 === 0){// if i is divisible by 5 (no remainder) print "Buzz"
+			myOutput += "Buzz";	
+			console.log("Buzz");
+		}else if(i % 3 === 0){// if i is divisible by 3 (no remainder) print "Fizz"
+			myOutput += "Fizz";
+			console.log("Fizz");
+		}else{// print number as string (avoid adding)
+			console.log(i);
+			myOutput += i.toString();
+		}
+		myOutput += '<br/>';// add linebreak
+	}
+	return myOutput;
+}
+
+let myFizBiz = get_fizBiz(100);
+let solOutput = document.getElementById("solution");
+solOutput.innerHTML='<p>'+myFizBiz+'</p>';
+
+</script>
+</body>
+</html>
