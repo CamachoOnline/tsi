@@ -42,10 +42,10 @@ h1+p{font-size:1.5en;}
 */
 let get_fizBiz = (n) =>{
 	
-	/* declare a storage variable for text output */
+	/* declare a storage variable were I can add to the vairiable based on loop iteration */
 	let myOutput="";
 	
-	/* loop based on (n) */
+	/* loop based on (n) -  using a for loop seems the best choice here vs while. since we are starting at 1 rather than 0 we have to add 1 to the passed (n) value */
 	for(let i = 1; i<n+1; i++){
 		
 		/* if (i) is divisible by 15 with no remainder print "FizzBuzz" */ 
