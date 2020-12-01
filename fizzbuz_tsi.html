@@ -21,7 +21,7 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;line-height:1;}
 h1{fonts-size:3.5em;}
 
 h1+p{font-size:1.5en;}
-.tsi--section 
+	
 </style>
 </head>
 
@@ -34,35 +34,52 @@ h1+p{font-size:1.5en;}
 <div class="tsi--block tsi--solution" id="solution"></div>
 </section>
 <script>
+	
 /**
-* outputs count from 1 to given number into "solution" elemet. identifies multiples of
-* 3, 5 and 15(3x5) with text("Fizz", "Buzz", or 'FizzBuzz") vs number respectivelt., 
+* TSI FizzBuzz Challenge
+* Outputs number count from 1 to given number (n) into "solution" elemet. However, when increment (i) is a multiple of
+* 3, 5 and 15(3x5) we output ("Fizz", "Buzz", or 'FizzBuzz") text respectively. 
 */
 let get_fizBiz = (n) =>{
-	// storage for text output
+	
+	/* declare a storage variable for text output */
 	let myOutput="";
-	// loop interations based on n 
+	
+	/* loop based on (n) */
 	for(let i = 1; i<n+1; i++){
-		if(i % (3*5) === 0){// if i is divisible by 15 (no remainder) print "FizzBuzz" 
+		
+		/* if (i) is divisible by 15 with no remainder print "FizzBuzz" */ 
+		if(i % (3*5) === 0){ 
 			myOutput += "FizzBuzz";
-			console.log("FizzBuzz");
-		}else if(i % 5 === 0){// if i is divisible by 5 (no remainder) print "Buzz"
-			myOutput += "Buzz";	
-			console.log("Buzz");
-		}else if(i % 3 === 0){// if i is divisible by 3 (no remainder) print "Fizz"
+		
+		/* if (i) is divisible by 5 (no remainder) print "Buzz" */
+		}else if(i % 5 === 0){
+			myOutput += "Buzz";
+			
+		/* if (i) is divisible by 3 (no remainder) print "Fizz" */
+		}else if(i % 3 === 0){
 			myOutput += "Fizz";
-			console.log("Fizz");
-		}else{// print number as string (avoid adding)
-			console.log(i);
+			
+		/* if (i) does match any of the previous conditionals add (i) as a string */
+		}else{
 			myOutput += i.toString();
 		}
-		myOutput += '<br/>';// add linebreak
+		
+		/* add linebreak */
+		myOutput += '<br/>'; 
 	}
+	
+	/* When loop is completed return the compiled output */
 	return myOutput;
 }
 
+/* declare variable with the returned output from get_fizBiz function */
 let myFizBiz = get_fizBiz(100);
+	
+/* Grab instance of element by id that will recieve compiled output */
 let solOutput = document.getElementById("solution");
+	
+/* place the output storage vaiable as html wraping the variable in a paragraph element  */
 solOutput.innerHTML='<p>'+myFizBiz+'</p>';
 
 </script>
